@@ -19,7 +19,10 @@ class CreateProfilesTable extends Migration
             $table->string('location', 30)->nullable();
             $table->string('sex')->nullable();
             $table->integer('age')->nullable();
-            $table->string('age_interest')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('min_age')->default(18)->nullable();
+            $table->integer('max_age')->default(100)->nullable();
+            $table->string('gender_interest')->nullable();
             $table->timestamps();
         });
     }

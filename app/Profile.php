@@ -14,7 +14,10 @@ class Profile extends Model
         'age',
         'sex',
         'location',
-        'age_interest'
+        'min_age',
+        'max_age',
+        'gender_interest',
+        'description'
     ];
 
     public function user()
@@ -30,19 +33,9 @@ class Profile extends Model
         return Storage::url($this->profile_picture);
     }
 
-//    public function getPicUrl()
-//    {
-//        $profilePic = Storage::exists($this->profile_picture);
-//
-//        if ($profilePic === null) {
-//            $profilePic = $this->profile_picture;
-//        }
-//
-//        return $profilePic;
-//    }
-
     public function scopeWithoutMe($query)
     {
         return $query->where('id', '<>', auth()->id());
     }
+
 }

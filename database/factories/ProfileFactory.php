@@ -18,12 +18,16 @@ $factory->define(Profile::class, function (Faker $faker) {
         $sex = 'm';
         $name = $faker->firstNameMale;
         $allPictures = $allMenPictures;
+        $genderInterest = 'f';
     } else {
         $sex = 'f';
         $name = $faker->firstNameFemale;
         $allPictures = $allWomanPictures;
+        $genderInterest = 'm';
     }
     $whatPicture = $allPictures[rand(0, count($allPictures) - 1)];
+    $lowerAge = rand(18, 90);
+    $upperAge = rand($lowerAge, 90);
 
     return [
         'profile_picture' => $whatPicture,
@@ -32,6 +36,9 @@ $factory->define(Profile::class, function (Faker $faker) {
         'age' => rand(18, 90),
         'sex' => $sex,
         'location' => $faker->city,
-        'age_interest' => rand(18, 90)
+        'min_age' => $lowerAge,
+        'max_age' => $upperAge,
+        'gender_interest' => $genderInterest,
+        'description' => $faker->text(140)
     ];
 });

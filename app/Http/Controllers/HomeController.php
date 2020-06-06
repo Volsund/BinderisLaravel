@@ -15,7 +15,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $profiles = Profile::withoutMe()->get();
+        $profiles = Profile::withoutMe()->inRandomOrder()->get();
 
         return view('home', [
             'profiles' => $profiles

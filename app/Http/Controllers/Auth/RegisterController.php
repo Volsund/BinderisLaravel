@@ -63,7 +63,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->profile()->create([]);
+        $user->profile()->create([
+            'sex' => $data['sex'],
+            'gender_interest' => $data['sex'] === 'm' ? 'f' : 'm',
+        ]);
 
         Mail::to($user->email)
             ->queue(new SendWelcomeEmail($user));

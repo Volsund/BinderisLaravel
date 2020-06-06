@@ -38,8 +38,32 @@ class User extends Authenticatable
         return $this->hasMany(Picture::class);
     }
 
+    public function decisions()
+    {
+        return $this->hasMany(Decision::class);
+    }
+
     public function scopeWithoutMe($query)
     {
         return $query->where('id', '<>', auth()->id());
+    }
+
+    public function scopeFilterDecision($query)
+    {
+        $decisions = $this->decisions()->pluck('decision_to');
+
+        $query->where('id', '<>', $this->id)
+            ->whereNotIN('id', $decisions->all());
+    }
+
+
+    public function scopeFilterAge($query)
+    {
+        $authMaxAge = $this->profile()->first()->max_age;
+        $authMinAge = $this->profile()->first()->min_age;
+
+
+//        $query->whereBetween($this->profile()->first()->age, $authMinAge,'and', $authMaxAge);
+
     }
 }

@@ -1,6 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -68,13 +70,13 @@ section {
 
 body {
     margin: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Merriweather', serif;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
     color: #212529;
     text-align: left;
-    background-color: #f8fafc;
+    background-color: #FFF9FB;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4979,10 +4981,9 @@ input[type=button].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #FFF9FB;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+
 }
 
 .card > hr {
@@ -5037,8 +5038,8 @@ input[type=button].btn-block {
 .card-header {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #1E1E24;
+    color: #EF2D56;
 }
 
 .card-header:first-child {
@@ -6890,7 +6891,7 @@ a.close.disabled {
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #fff;
+    color: white;
     text-align: center;
 }
 
@@ -7065,7 +7066,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #343a40;
 }
 
 a.bg-dark:hover,
@@ -10950,6 +10951,7 @@ a.text-dark:focus {
     max-height: 700px;
     /*width: auto;*/
 }
+
 /*Carousel image fixed size/center END */
 
 /*Carousel next/previous icons*/
@@ -10964,19 +10966,95 @@ a.text-dark:focus {
     background-image: none;
 }
 
-.carousel-control-next-icon:after
-{
-    content: '>';
+.carousel-control-next-icon:after {
+    content: 'LOVE';
     font-size: 55px;
     color: red;
 }
 
 .carousel-control-prev-icon:after {
-    content: '<';
+    content: 'PASS';
     font-size: 55px;
-    color: red;
+    color: black;
 }
 
 /*Carousel next/previous icons END*/
+
+/*Caption text custom*/
+.caption-text {
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-text-stroke: 1.2px black; /* width and color */
+    text-shadow: 2px 0px 6px rgba(0, 0, 0, 0.44);
+}
+
+/*Caption text custom END*/
+
+.main-head {
+    font-family: 'Lora', serif;
+}
+
+.preview-text {
+    text-shadow: 1px 0px 6px #000000;
+}
+
+form.hide-submit input[type="submit"] {
+    display: none;
+}
+
+.vote-dislike-button, .vote-like-button {
+    margin-top: 200px;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.vote-dislike-button:hover {
+    opacity: 1
+}
+
+.vote-like-button:hover {
+    opacity: 1;
+    fill: #EF2D56;
+}
+
+.gallery-image {
+    margin: 10px;
+    border-radius: 7px;
+}
+
+.navbar {
+    height: 70px;
+    background-color: #1E1E24;
+}
+
+.home-picture {
+    border: 6px solid #1E1E24;
+}
+
+.edit-profile-card {
+    border: solid 4px #1E1E24;
+    border-radius: 10px;
+}
+
+.edit-profile-button{
+    background-color: #EF2D56;
+    border:none;
+
+}
+
+.edit-profile-button:hover{
+    background-color: #EF2D56;
+    color:#1E1E24;
+}
+
+.matching-name{
+    font-size:35px;
+    color:#EF2D56;
+}
+
+
 
 

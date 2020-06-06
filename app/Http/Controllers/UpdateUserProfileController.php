@@ -28,7 +28,10 @@ class UpdateUserProfileController extends Controller
                 'location' => $request->get('location'),
                 'sex' => $request->get('sex'),
                 'age' => $request->get('age'),
-                'age_interest' => $request->get('age_interest')
+                'min_age' => $request->get('min_age'),
+                'max_age' => $request->get('max_age'),
+                'gender_interest' => $request->get('gender_interest'),
+                'description'=>$request->get('description')
             ]);
         } else {
             $user->profile()->update([
@@ -37,7 +40,11 @@ class UpdateUserProfileController extends Controller
                 'location' => $request->get('location'),
                 'sex' => $request->get('sex'),
                 'age' => $request->get('age'),
-                'age_interest' => $request->get('age_interest')
+                'min_age' => $request->get('min_age'),
+                'max_age' => $request->get('max_age'),
+                'gender_interest' => $request->get('gender_interest'),
+                'description'=>$request->get('description')
+
             ]);
         }
 

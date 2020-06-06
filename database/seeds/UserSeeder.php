@@ -1,5 +1,6 @@
 <?php
 
+use App\Decision;
 use App\Picture;
 use App\Profile;
 use App\User;
@@ -12,30 +13,24 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        $users = factory(User::class, 50)->make();
+        $users = factory(User::class, 100)->make();
 
         foreach ($users as $user) {
 
             $user->save();
 
+            //todo Why is decision seeder not working?
+//            $decision = factory(Decision::class,4)->make();
+//            $decision->user()->associate($user);
+//            $decision->save();
+
             $profile = factory(Profile::class)->make();
             $profile->user()->associate($user);
             $profile->save();
+
             $picLocation = $profile->profile_picture;
             $destination = 'public/profilePictures/' . $user->id . '.jpeg';
             Storage::copy($picLocation, $destination);
-
-            // Resize image
-//            $contents = Storage::get('public/profilePictures/' . $user->id . '.jpeg');
-//            $img = Image::make($contents);
-//            $img->resize(null, 300, function ($constraint) {
-//                $constraint->aspectRatio();
-//            });
-//            // How do i save this???
-//            $path = 'storage/profilePictures/'.$user->name . '.jpeg';
-//            $img->save($path);
-
-
 
             $profile->update([
                 'profile_picture' => $destination,

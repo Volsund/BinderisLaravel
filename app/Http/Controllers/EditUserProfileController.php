@@ -10,7 +10,7 @@ class EditUserProfileController extends Controller
     {
         $user = auth()->user();
 
-        return view('profile', [
+        return view('profileEdit', [
             'user' => $user,
             'profile'=>$user->profile
         ]);

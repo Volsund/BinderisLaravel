@@ -23,8 +23,8 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <svg class="bi bi-heart-half" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            <a class="navbar-brand" href="{{ url('/home') }}">
+                <svg class="bi bi-heart-half" width="1em" height="1em" viewBox="0 0 16 16" fill="#EF2D56"
                      xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 1.314C3.562-3.248-7.534 4.735 8 15V1.314z"/>
                     <path fill-rule="evenodd"
@@ -42,16 +42,16 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/matching') }}" style="color:red"><b>Let's Play!</b></a>
+                        <a class="nav-link" href="{{ url('/matching') }}" style="color:#EF2D56"><b>Let's Play!</b></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/matches') }}"><b>My Matches</b></a>
                     </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/home') }}"><b>Home</b></a>
-                    </li>
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
