@@ -1,4 +1,4 @@
-# Foobar
+# Description
 
 Dating site made with Laravel and Bootstrap using databases.
 
@@ -6,7 +6,4 @@ Dating site made with Laravel and Bootstrap using databases.
 
 
 ## Usage
---
-
-## License
---
+Possibility to match with preferred age/gender and see match history.
